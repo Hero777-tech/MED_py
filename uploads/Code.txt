@@ -1,0 +1,173 @@
+sum
+declare
+  2  a number;
+  3  b number;
+  4  c number;
+  5  begin
+  6  a:=1;
+  7  b:=99;
+  8  c:=a+b;
+  9  dbms_output.put_line('Sum='||c);
+ 10  end;
+ 11  /
+
+square
+declare
+  2  a number;
+  3  sq number;
+  4  begin
+  5  a:= &a;
+  6  sq:=a*a;
+  7  dbms_output.put_line('Square='||sq);
+  8  end;
+  9  /
+
+greastest 3 no.
+ declare
+  2  a number;
+  3  b number;
+  4  c number;
+  5  begin
+  6  a:=&a;
+  7  b:=&b;
+  8  c:=&c;
+  9  if(a>b AND a>c) then
+ 10  dbms_output.put_line('A is greatest');
+ 11  elsif(b>a AND b>c) then
+ 12  dbms_output.put_line('B is greatest');
+ 13  else
+ 14  dbms_output.put_line('C is greatest');
+ 15  end if;
+ 16  end;
+ 17  /
+
+greatest 2 no.
+ declare
+  2  a number;
+  3  b number;
+  4  begin
+  5  a:=&a;
+  6  b:=&b;
+  7  if (a>b) then
+  8  dbms_output.put_line('A is greatest');
+  9  else
+ 10  dbms_output.put_line('B is greatest');
+ 11  end if;
+ 12  end;
+ 13  /
+
+cube
+ declare
+  2  a number;
+  3  cube number;
+  4  begin
+  5  a:=&a;
+  6  cube:=a*a*a;
+  7  dbms_output.put_line('Cube='||cube);
+  8  end;
+  9  /
+
+factorial
+ declare
+  2  a number;
+  3  fact number;
+  4  begin
+  5  a:=&a;
+  6  fact:=1;
+  7  while(a>0)loop
+  8  fact:=fact*a;
+  9  a:=a-1;
+ 10  end loop;
+ 11  dbms_output.put_line('Factorial='||fact);
+ 12  end;
+ 13  /
+
+even
+ declare
+  2  n number;
+  3  num number;
+  4  begin
+  5  num:=&num;
+  6  n:=mod(num,2);
+  7  if(n=0) then
+  8  dbms_output.put_line('Given number is even'||num);
+  9  else
+ 10  dbms_output.put_line('Given number is not even'||num);
+ 11  end if;
+ 12  end;
+ 13  /
+
+area of circle
+ declare
+  2  r number;
+  3  a number;
+  4  begin
+  5  r:=&r;
+  6  a:=3.14*r*r;
+  7  dbms_output.put_line('Area of the Circle '||a);
+  8  end;
+  9  /
+
+gross pay and net pay
+ declare
+  2  basic_pay int;
+  3  da int;
+  4  hra int;
+  5  pf int;
+  6  net_pay int;
+  7  gross_pay int;
+  8  begin
+  9  basic_pay:=&basic_pay;
+ 10  da:=&da;
+ 11  hra:=&hra;
+ 12  pf:=&pf;
+ 13  net_pay:=basic_pay+((da/100)*basic_pay)+((hra/100)*basic_pay);
+ 14  gross_pay:=net_pay+((pf/100)*basic_pay);
+ 15  dbms_output.put_line('Gross Pay= '||gross_pay);
+ 16  dbms_output.put_line('Net Pay= '||net_pay);
+ 17  end;
+ 18  /
+
+rev num
+ declare
+  2  a number;
+  3  rev number;
+  4  begin
+  5  a:=&a;
+  6  for i in reverse 1.. length(a)
+  7  loop
+  8  rev:=rev||substr(a,i,1);
+  9  end loop;
+ 10  dbms_output.put_line('Reversed '||rev);
+ 11  end;
+ 12  /
+
+multiplicaton table
+ declare
+  2  a int;
+  3  i int;
+  4  begin
+  5  a:=&a;
+  6  i:=1;
+  7  while i<11
+  8  loop
+  9  dbms_output.put_line(a||'x'||i||'='||a*i);
+ 10  i:=i+1;
+ 11  end loop;
+ 12  end;
+ 13  /
+
+rev str
+ declare
+  2  str varchar(10);
+  3  rev varchar(10);
+  4  begin
+  5  str:='&str';
+  6  for i in reverse 1.. length(str)
+  7  loop
+  8  rev:=rev||substr(str,i,1);
+  9  end loop;
+ 10  dbms_output.put_line('Reversed '||rev);
+ 11  end;
+ 12  /
+
