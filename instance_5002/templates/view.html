@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>File Details</h1>
+        <table class="table">
+            <tr>
+                <th>Filename</th>
+                <td>{{ file[1] }}</td>
+            </tr>
+            <tr>
+                <th>Replication 1 Status</th>
+                <td>{{ file[2] }}</td>
+            </tr>
+            <tr>
+                <th>Replication 2 Status</th>
+                <td>{{ file[2] }}</td>
+            </tr>
+            <tr>
+                <th>Timestamp</th>
+                <td>{{ file[2] }}</td>
+            </tr>
+        </table>
+        <a href="{{ url_for('index') }}" class="btn btn-primary">Back to Home</a>
+    </div>
+</body>
+</html>
